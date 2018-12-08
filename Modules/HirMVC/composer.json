@@ -1,0 +1,25 @@
+{
+    "name": "nwidart/hirmvc",
+    "description": "",
+    "authors": [
+        {
+            "name": "Nicolas Widart",
+            "email": "n.widart@gmail.com"
+        }
+    ],
+    "extra": {
+        "laravel": {
+            "providers": [
+                "Modules\\HirMVC\\Providers\\HirMVCServiceProvider"
+            ],
+            "aliases": {
+                
+            }
+        }
+    },
+    "autoload": {
+        "psr-4": {
+            "Modules\\HirMVC\\": ""
+        }
+    }
+}

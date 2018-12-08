@@ -1,0 +1,14 @@
+{
+    "name": "HirMVC",
+    "alias": "hirmvc",
+    "description": "",
+    "keywords": [],
+    "active": 1,
+    "order": 0,
+    "providers": [
+        "Modules\\HirMVC\\Providers\\HirMVCServiceProvider"
+    ],
+    "aliases": {},
+    "files": [],
+    "requires": []
+}
