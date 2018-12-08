@@ -1,9 +1,21 @@
 @extends('hirmvc::layouts.master')
 
 @section('content')
-    <h1>Hello World</h1>
+    <h3>This is Modularization in laravel</h3>
 
-    <p>
-        This view is loaded from module: {!! config('hirmvc.name') !!}
-    </p>
+    <strong>Names: </strong>
+    <br>
+    @foreach($users as $user)
+        &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+        {{$user->name}}
+        <br>
+    @endforeach
+    <hr>
+    @foreach($posts as $post)
+        <strong>Title is: </strong> &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+        {{$post->title}}
+        <br>
+        <strong>Body is: </strong> &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+        {{$post->body}}
+    @endforeach
 @stop

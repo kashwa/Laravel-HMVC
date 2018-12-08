@@ -2,37 +2,53 @@
 
 namespace Modules\HirMVC\Http\Controllers;
 
+use App\Http\Middleware\RedirectIfAuthenticated;
 use Illuminate\Http\Request;
 use Illuminate\Http\Response;
 use Illuminate\Routing\Controller;
+use Illuminate\Support\Facades\Redirect;
+use Modules\HirMVC\Entities\Post;
+use Modules\HirMVC\Entities\User;
+use Modules\HirMVC\Http\Interfaces\hirmvc;
 
 class HirMVCController extends Controller
 {
+    public function __construct()
+    {
+    }
+
     /**
      * Display a listing of the resource.
      * @return Response
      */
-    public function index()
+    public function index(hirmvc $hmvcInterface)
     {
-        return view('hirmvc::index');
+//        $user = User::all();
+//        $post = Post::all();
+
+        $user = $hmvcInterface->users();
+        $post = $hmvcInterface->posts();
+
+        return view('hirmvc::index')->withUsers($user)->withPosts($post);
     }
 
     /**
-     * Show the form for creating a new resource.
+     * Create User.
      * @return Response
      */
     public function create()
     {
-        return view('hirmvc::create');
+        // TODO: create USER
     }
 
     /**
-     * Store a newly created resource in storage.
+     * Create Post.
      * @param  Request $request
      * @return Response
      */
     public function store(Request $request)
     {
+        // TODO: create POST
     }
 
     /**

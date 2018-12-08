@@ -12,5 +12,7 @@
 */
 
 Route::prefix('hirmvc')->group(function() {
-    Route::get('/', 'HirMVCController@index');
+    Route::get('/', 'HirMVCController@index')->name('index');
+    Route::post('/create/user', 'HirMVCController@create');
+    Route::post('/create/post', 'HirMVCController@store');
 });
